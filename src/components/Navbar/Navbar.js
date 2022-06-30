@@ -4,15 +4,15 @@ const Navbar = () => {
     const menu = (
         <>
           <li>
-            <Link to="/task">Completed Tasks</Link>
+            <Link to="/home">Completed Tasks</Link>
           </li>
           <li>
-            <Link to="todo" spy={true} smooth={true}>
+            <Link to="/todo" spy={true} smooth={true}>
             To-Do
             </Link>
           </li>
           <li>
-            <Link to="calendar" spy={true} smooth={true}>
+            <Link to="/calendar" spy={true} smooth={true}>
             Calendar
             </Link>
           </li>
