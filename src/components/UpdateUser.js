@@ -5,7 +5,7 @@ const UpdateUser = () => {
   const { id } = useParams();
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/user/${id}`;
+    const url = `https://cryptic-anchorage-67641.herokuapp.com/user/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setUsers(data));
@@ -17,7 +17,7 @@ const UpdateUser = () => {
 
     const updateUser = { name };
     // send data to the server
-    const url = `http://localhost:5000/user/${id}`;
+    const url = `https://cryptic-anchorage-67641.herokuapp.com/user/${id}`;
     fetch(url, {
       method: "PUT", // or 'PUT'
       headers: {
@@ -27,7 +27,7 @@ const UpdateUser = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
+        // console.log("Success:", data);
         alert("add user successfully");
         e.target.reset();
       });
