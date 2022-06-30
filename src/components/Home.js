@@ -26,7 +26,7 @@ const Home = () => {
     }
   };
   return (
-    <div className="container ml-10">
+    <div className="container ">
       <h1>All user data:{users.length}</h1>
 
       {users.map((user) => (
