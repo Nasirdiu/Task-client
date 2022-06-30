@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -25,35 +26,42 @@ const Home = () => {
     }
   };
   return (
-    <div>
+    <div className="container ml-10">
       <h1>All user data:{users.length}</h1>
 
-     {
-        users.map(user=><div>
-             <div class="overflow-x-auto">
-        <table class="table w-full">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Update</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{user.name}</td>
-              <td><button className="btn btn-sm btn-primary">Update</button></td>
-              <td><button className="btn btn-sm btn-primary" onClick={() => handleDelete(user._id)}>Delete</button></td>
-            </tr>
-
-            
-
-            
-          </tbody>
-        </table>
-      </div>
-        </div>)
-     }
+      {users.map((user) => (
+        <div>
+          <div class="overflow-x-auto">
+            <table class="table w-full">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Update</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{user.name}</td>
+                  <td>
+                    <Link to={`/update/${user._id}`}>
+                      <button className="btn btn-sm btn-primary">Update</button>
+                    </Link>
+                  </td>
+                  <td>
+                    <button
+                      className="btn btn-sm btn-primary"
+                      onClick={() => handleDelete(user._id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
